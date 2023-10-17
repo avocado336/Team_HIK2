@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+html,
+body {
+	height: 100%;
+	background-color: rgb(233, 233, 233);
+}
+
+header {
+	width: 100%;
+	padding-left: 3%;
+	padding-right: 8%;
+	background-color: rgb(166, 163, 163);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+hr {
+	border: solid 1px rgb(150, 150, 150);
+}
+
+img {
+	height: 5vw;
+	width: 5vw;
+}
+
+.warraper {
+	height: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+}
+
+p {
+	display: flex;
+	text-align: center;
+	margin: 3vw 0;
+}
+
+.label {
+	height: 0vw;
+	width: 20vw;
+	display: inline-block;
+	font-size: 2vw;
+	font-weight: bold;
+}
+
+#btn {
+	height: 4vw;
+	width: 13vw;
+	background-color: skyblue;
+	font-weight: bold;
+	font-size: 1.5vw;
+}
+
+#sbt {
+	height: 4vw;
+	width: 13vw;
+	background-color: skyblue;
+	font-weight: bold;
+	font-size: 1.5vw;
+}
