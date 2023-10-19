@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+	<link rel="stylesheet" href="input.css">
+</head>
+
+<body>
+
+	<header>
+		<img src="img/DLlogo.png" alt="会社">
+		<h2>JavaTeamDevelopment</h2>
+	</header>
+
+	<hr>
+
+	<div class="wrapper">
+
+		<form>
+
+			<p class="message">自己紹介の内容を記入して下さい</p>
+
+			<div class="inputForm">
+
+				<table>
+					<tr>
+						<th>名前</th>
+						<td>
+							<p>必須</p>
+						</td>
+						<td><input type="text" class="inputName" name="name"></td>
+					</tr>
+					<tr>
+						<th>フリガナ</th>
+						<td>
+							<p>必須</p>
+						</td>
+						<td><input type="text" class="inputName" name="ruby"></td>
+					</tr>
+					<tr>
+						<th>性別</th>
+						<td></td>
+						<td>
+							<label class="genderCheck"><input type="radio" name="gender">男性</label>
+							<label class="genderCheck"><input type="radio" name="gender">女性</label>
+						</td>
+					</tr>
+					<tr>
+						<th>趣味</th>
+						<td>
+							<p>必須</p>
+						</td>
+						<td class="test">
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby">映画</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby">スポーツ観戦</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby">読書</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby">食べ歩き</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby">旅行</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby">ゲーム</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby">お絵かき</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby">犬と遊ぶ</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby">音楽</lable>
+						</td>
+					</tr>
+					<tr>
+						<th>一言</th>
+						<td></td>
+						<td><textarea id="commentText" name="comment" rows="7" cols="50"></textarea></td>
+					</tr>
+				</table>
+
+			</div>
+
+			<div class="pageTransition">
+
+				<input type="button" id="returnBtn" value="戻る">
+				<input type="submit" id="nextBtn" value="次へ">
+
+			</div>
+
+		</form>
+	</div>
+
+</body>
+
+</html>
