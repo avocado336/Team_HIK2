@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<html lang="ja" xmlns:th = "http://www.thymeleaf.org">
+<!--<html lang="ja">-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="details.css">
+  <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">
+<title>詳細画面</title>
+</head>
+
+<body>
+		<header>
+			<img src="img/DriveLine.png" alt="会社のロゴ" title="会社のロゴ">
+			<h1>JavaTeamDevelopment</h1>
+		</header>
+		
+		<hr>
+			
+		<main>
+			<h2>自己紹介</h2>
+			<table class = "table1">
+				<tr>
+					<td class = "support0">管理番号</td>
+					<td class = "support1">XXX01</td>
+				</tr>
+				<tr>
+					<td class = "support0">名前</td>
+					<td class = "support1">新庄剛志</td>
+				</tr>				
+				<tr>
+					<td class = "support0">フリガナ</td>
+					<td class = "support1">シンジョウツヨシ</td>
+				</tr>
+				<tr>			
+					<td class = "support0">性別</td>
+					<td class = "support1">男性</td>
+				</tr>
+				<tr>				
+					<td class = "support0">趣味</td>
+					<td class = "support1">項目1,項目4,項目8,項目9</td>
+				</tr>
+				<tr class = "tr0">				
+					<td class = "support3">一言</td>
+					<td class = "support4">DRIVELINEのサポートメンバーの新庄です！
+						<br>よろしくお願いします！</br></td>
+				</tr>
+
+			</table>
+			<table class = "table2">
+			<form th:action = "@{/introduction_move}" name = "introduction_form">
+				<th class = "support5">
+					<button class = "btn" type = "submit"><span>戻る</span></button>
+				</th>
+				<th class = "support5"><span>編集</span></th>
+				<th class = "support5"><span class = "span2">削除</span></th>
+			</table>
+		</main>
+</body>
+
+</html>
+

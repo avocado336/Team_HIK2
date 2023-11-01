@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>本の一覧表示</title>
+</head>
+<body>
+    <table>
+        <tr th:each="book : ${introduction}" th:object="${book}">
+            <td th:text="*{introduction_id}"></td>
+            <td th:text="*{user_id}"></td>
+            <td th:text="*{name}"></td>
+            <td th:text="*{kana}"></td>
+            <td th:text="*{gender}"></td>
+            <td th:text="*{hobby}"></td>
+            <td th:text="*{word}"></td>
+            <td th:text="*{created_at}"></td>
+            <td th:text="*{updated_at}"></td>
+        </tr>
+    </table>
+</body>
+</html>
