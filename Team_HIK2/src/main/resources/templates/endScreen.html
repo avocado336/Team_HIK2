@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
@@ -19,7 +19,7 @@
 	<!-- ヘッダー生成 -->
 	<header>
 
-		<img src="C:\Users\homur\git\Team_HIK2\Team_HIK2\src\main\resources\static\img\DLlogo.png">
+		<img src="img/DLlogo.png">
 
 		<h2>JavaTeamDevelopment</h2>
 
@@ -42,7 +42,7 @@
 			<p>自己紹介の内容を変更するには登録内容一覧画面から編集をして頂くか、管理者へお問い合わせください。</p>
 		</div>
 
-		<form action="./topScreen.html">
+		<form th:action="@{/topScreen}">
 
 			<input type="submit" id="sbt" value="ＴＯＰへ戻る">
 

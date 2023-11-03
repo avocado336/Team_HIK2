@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
@@ -19,7 +19,7 @@
 	<!-- ヘッダー生成 -->
 	<header>
 
-		<img src="C:\Users\homur\git\Team_HIK2\Team_HIK2\src\main\resources\static\img\DLlogo.png">
+		<img src="img/DLlogo.png">
 
 		<h2>JavaTeamDevelopment</h2>
 
@@ -29,7 +29,7 @@
 
 		<h2>新規会員登録</h2>
 
-		<form action="./topScreen.html" name="login_form">
+		<form th:action="@{/topScreen}" name="login_form">
 			<table>
 				<tr>
 					<th for="userId" class="label">UserID</th>
@@ -56,13 +56,13 @@
 			<input type="submit" id="btn" value="登録">
 		</form>
 
-		<form action="./loginScreen.html" name="new">
+		<form th:action="@{/loginScreen}" name="new">
 
 			<input type="submit" id="sbt" value="ログイン画面へ">
 
 		</form>
 	</div>
-	<script src="./signUp.js"></script>
+	<script src="signUp.js"></script>
 </body>
 
 </html>

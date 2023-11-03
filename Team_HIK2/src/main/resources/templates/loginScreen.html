@@ -19,7 +19,7 @@
 	<!-- ヘッダー生成 -->
 	<header>
 
-		<img src="C:\Users\homur\git\Team_HIK2\Team_HIK2\src\main\resources\static\img\DLlogo.png">
+		<img src="img/DLlogo.png">
 
 		<h2>JavaTeamDevelopment</h2>
 
@@ -29,7 +29,7 @@
 
 		<h2>ログイン</h2>
 
-		<form action="./topScreen.html" name="login_form">
+		<form th:action="@{/topScreen}" name="login_form">
 			<table>
 				<tr>
 					<th for="userId" class="label">UserID</th>
@@ -46,13 +46,13 @@
 			<input type="submit" id="btn" value="登録">
 		</form>
 
-		<form action="./signUp.html" name="new">
+		<form th:action="@{/signUp}" name="new">
 
 			<input type="submit" id="sbt" value="新規会員登録はこちら">
 
 		</form>
 	</div>
-	<script src="./loginScreen.js"></script>
+	<script src="loginScreen.js"></script>
 </body>
 
 </html>

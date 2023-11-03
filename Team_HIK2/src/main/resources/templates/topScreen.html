@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
@@ -19,14 +19,14 @@
 	<!-- ヘッダー生成 -->
 	<header>
 
-		<img src="C:\Users\homur\git\Team_HIK2\Team_HIK2\src\main\resources\static\img\DLlogo.png">
+		<img src="img/DLlogo.png">
 
 		<h2>JavaTeamDevelopment</h2>
 
 	</header>
 
 	<div class="warraper">
-		<form action="./" name="login_form">
+		<form th:action="@{/input}" name="login_form">
 			<table>
 				<tr>
 					<th class="label">自己紹介登録</th>
@@ -42,7 +42,7 @@
 			知ってもらえるチャンスにしましょう。
 		</p>
 
-		<form action="./" name="new">
+		<form th:action="@{/introduction}" name="new">
 			<table>
 				<tr>
 					<th class="label">自己紹介登録者一覧</th>
