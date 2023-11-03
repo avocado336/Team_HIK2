@@ -14,7 +14,7 @@ import com.example.demo.service.InputService;
 public class InputController {
 	@Autowired
 	InputService service;
-}
+
 	
 	@GetMapping("/input")
 	public String input(Model model) {
@@ -26,4 +26,5 @@ public class InputController {
 	public String save(@ModelAttribute Introduction into, Model model) {
 		service.insert(into);
 		return "inputCheck";
+	}
 }
