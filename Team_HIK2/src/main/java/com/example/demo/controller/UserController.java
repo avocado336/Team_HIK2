@@ -25,6 +25,14 @@ public class UserController {
 		return "signUp";
 	}
 
+	//	@GetMapping("/topScreen")
+	//	public String saveUser(@ModelAttribute User user, Model model) {
+	//
+	//		// serviceクラスのinsertメソッドを呼び出し、DBに入力値を登録
+	//		service.insert(user);
+	//		return "topScreen";
+	//	}
+
 	@GetMapping("/topScreen")
 	public String topScreen() {
 		return "topScreen";
