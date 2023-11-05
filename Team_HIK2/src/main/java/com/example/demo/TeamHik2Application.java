@@ -13,5 +13,5 @@ public class TeamHik2Application {
 	public static void main(String[] args) {
 		SpringApplication.run(TeamHik2Application.class, args);
 	}
-
+	
 }
