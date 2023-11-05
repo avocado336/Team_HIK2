@@ -19,31 +19,31 @@ public class Book {
 	
 	
 	@Column(name = "introduction_id")
-	private String introduction_id;
+	public String introduction_id;
 	
 	@Column(name = "user_id")
-	private String user_id;
+	public String user_id;
 		
 	@Column(name = "name")
-	private String name;
+	public String name;
 	
 	@Column(name = "kana")
-	private String kana;
+	public String kana;
 	
 	@Column(name = "gender")
-	private String gender;
+	public String gender;
 	
 	@Column(name = "hobby")
-	private String hobby;
+	public String hobby;
 	
 	@Column(name = "word")
-	private String word;
+	public String word;
 	
 	@Column(name = "created_at")
-	private String created_at;
+	public String created_at;
 	
 	@Column(name = "updated_at")
-	private String updated_at;
+	public String updated_at;
 	
 	
 }

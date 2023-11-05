@@ -16,14 +16,25 @@ public class BookController {
 	@Autowired
 	BookService service;
 	
-	@GetMapping("/user_list")
-	public String UserList(Model model) {
+	@GetMapping("/intro_list")
+	public String IntroList(Model model) {
 		
-		List<Book> booklist = service.findAll();
-		model.addAttribute("introduction", booklist);
-		return "test123";
+//		String sql = "SELECT * FROM introduction";	
+//		List<Map<String,Object>> introlist = JdbcTemplate.queryForList(sql);
+		List<Book> introlist = service.findAll();
+		model.addAttribute("IntroList",introlist);
+		return "introduction";
+		
+//		List<Book> booklist = service.findAll();
+//		model.addAttribute("introduction", booklist);
+//		return "test123";
 		
 	}
+	
+	@GetMapping("/intro_move")
+	public String intro() {
+		return "introduction";
+	}	
 	
 	@GetMapping("/details_move")
 	public String details() {

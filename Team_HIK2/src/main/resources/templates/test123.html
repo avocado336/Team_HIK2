@@ -2,11 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>本の一覧表示</title>
+<title>いったん出力します</title>
 </head>
 <body>
+	<form th:action = "@{/intro_move}" name = "introduction_form">
     <table>
-        <tr th:each="book : ${introduction}" th:object="${book}">
+<!--		<tr th:each="intro : ${IntroList}">-->
+        <tr th:each="intro : ${IntroList}" th:object="${intro}">
             <td th:text="*{introduction_id}"></td>
             <td th:text="*{user_id}"></td>
             <td th:text="*{name}"></td>
@@ -18,5 +20,7 @@
             <td th:text="*{updated_at}"></td>
         </tr>
     </table>
+    <h2><button type = "submit">ただの遷移</button></h2>
+    </form>
 </body>
 </html>

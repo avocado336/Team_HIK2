@@ -27,13 +27,16 @@
 				<th class = "support0">ID</th>
 				<th class = "support1">名前</th>
 			</tr>
-			<tr>
-<!--				<input type = "submit" class = "support2" value = "ponsan">-->
+       		<tr th:each="intro : ${IntroList}" th:object="${intro}">
 				<td class = "support2">
-					<button class = "support2" type = "submit">ponsan</button>
+<!--					<button class = "support2" type = "submit">ponsan</button>-->
+					<td th:text="*{user_id}" button class = "support2" type = "submit"></td>
+<!--					<button class = "support2" type = "submit"><td th:text="*{user_id}" ></td></button>-->
+<!--					<td th:text="*{user_id}"></td>-->
 				</td>
-<!--				<td class = "support2" type = "submit">ponsan</td>-->
-				<td class = "support3">新庄剛志</td>
+<!--				<td class = "support3">新庄剛志</td>-->
+				<td th:text="*{created_at}" class = "support3"></td>				
+<!--				<td th:text="*{created_at}"></td>-->
 			</tr>
 			<tr>
 				<td class = "support4"><br></td>

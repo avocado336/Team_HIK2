@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+<html lang="ja">
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="register.css">
+  <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">
+<title>新規会員登録</title>
+</head>
+
+<body>
+	<header>
+		<img src= "img/DriveLine.png" alt="会社のロゴ" title="会社のロゴ">
+		<h1>JavaTeamDevelopment</h1>
+	</header>
+		
+	<hr>
+	
+	<main>
+		<h2>新規会員登録</h2>
+<!--		<form th:action = "@{/details_move}" name = "details_form">-->
+<!--		<form action = "#" method = "post">-->
+			<table>
+				<tr>
+					<th>UserID</th>
+					<th><input type = "button" value = "必須" class = "www"></th>	
+					<td><input type="text" value="" class="example1"></td>
+				</tr>
+				<tr>
+					<th>MailAddress</th>
+					<th><input type = "button" value = "必須" class = "www"></th>	
+					<td><input type="text" value="" class="example2"></td>
+				</tr>				
+				<tr>
+					<th>PassWord</th>
+					<th><input type = "button" value = "必須" class = "www"></th>					
+					<td><input type="text" value="" class="example2"></td>
+<!--					<td><textarea class = "pass" cols = "20" rows = "1"></textarea></td>-->
+				</tr>
+			</table>
+		
+		<h2><button type = "submit" class ="A">登録</button></h2>
+<!--		<h3 class = "enter"><button class = "button2">新規会員登録はこちら</button></h3>-->
+		<h3><button type = "submit" class ="B">ログイン画面へ</button></h3>
+<!--		</form>-->
+	</main>	
+<!--	<script src="login.js"></script>-->
+</body>
+
+</html>
