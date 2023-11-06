@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<!-- リセットCSSを読み込む処理を記述 -->
+	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+	<!-- cssファイルを読み込む処理を記述 -->
+	<link rel="stylesheet" href="loginScreen.css">
+	<!--	 jsのCDNを読み込む処理を記述 -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<!-- ヘッダー生成 -->
+	<header>
+
+		<img src="img/DLlogo.png">
+
+		<h2>JavaTeamDevelopment</h2>
+
+	</header>
+
+	<div class="warraper">
+
+		<h2>ログイン</h2>
+
+		<form th:action="@{/topScreen}" name="login_form">
+			<table>
+				<tr>
+					<th for="userId" class="label">UserID</th>
+
+					<td><input type="text" id="userId" name="userId"></td>
+				</tr>
+
+				<tr>
+					<th for="password" class="label">PassWord</th>
+
+					<td><input type="password" id="password" name="password"></td>
+				</tr>
+			</table>
+			<input type="submit" id="btn" value="登録">
+		</form>
+
+		<form th:action="@{/signUp}" name="new">
+
+			<input type="submit" id="sbt" value="新規会員登録はこちら">
+
+		</form>
+	</div>
+	<script src="loginScreen.js"></script>
+</body>
+
+</html>
