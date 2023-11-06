@@ -1,36 +1,11 @@
-INSERT INTO introduction
-(introduction_id,user_id,name,kana,gender,hobby,word,created_at,updated_at)
-value(1
-	  ,0001
-	  ,3
-	  ,4
-	  ,5
-	  ,6
-	  ,7
-	  ,'2023-11-01 10:10:00
-	  ,'2030-04-01 08:30:00')
-	
-	
-INSERT INTO introduction
-(introduction_id,user_id,name,kana,gender,hobby,word,created_at,updated_at)
-value(11
-	  ,0002
-	  ,33
-	  ,44
-	  ,5
-	  ,66
-	  ,77
-	  ,'2023-11-02 10:10:00
-	  ,'2030-04-01 08:30:00')
-	  
-INSERT INTO introduction
-(introduction_id,user_id,name,kana,gender,hobby,word,created_at,updated_at)
-value(111
-	  ,0003
-	  ,333
-	  ,444
-	  ,5
-	  ,666
-	  ,777
-	  ,'2023-11-03 10:10:00
-	  ,'2030-04-01 08:30:00')
+CREATE TABLE introduction(
+	introduction_id integer PRIMARY KEY,
+	user_id varchar(10) NOT NULL,
+	name varchar(10) NOT NULL,
+	kana varchar(20) NOT NULL,
+	gender char,
+	hobby varchar(60) NOT NULL,
+	word varchar(300),
+	created_at timestamp without time zone DEFAULT NOW(),
+	updated_at timestamp wiothout time zone
+);

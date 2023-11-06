@@ -1,11 +1,36 @@
-CREATE TABLE introduction(
-	introduction_id integer PRIMARY KEY,
-	user_id varchar(10) NOT NULL,
-	name varchar(10) NOT NULL,
-	kana varchar(20) NOT NULL,
-	gender char,
-	hobby varchar(60) NOT NULL,
-	word varchar(300),
-	created_at timestamp without time zone DEFAULT NOW(),
-	updated_at timestamp wiothout time zone
-);
+INSERT INTO introduction
+(introduction_id,user_id,name,kana,gender,hobby,word,created_at,updated_at)
+value(1
+   ,0001
+   ,本田嘉章
+   ,ホンダヨシユキ
+   ,男
+   ,映画鑑賞
+   ,本田ですよろしくお願いします！
+   ,'2023-11-01 10:10:00
+   ,'2023-12-01 10:10:00')
+ 
+ 
+INSERT INTO introduction
+(introduction_id,user_id,name,kana,gender,hobby,word,created_at,updated_at)
+value(2
+   ,0002
+   ,泉谷愛幸
+   ,イズタニミユキ
+   ,女
+   ,読書
+   ,泉谷ですよろしくお願いします！
+   ,'2023-11-02 10:10:00
+   ,'2023-12-02 10:10:00')
+   
+INSERT INTO introduction
+(introduction_id,user_id,name,kana,gender,hobby,word,created_at,updated_at)
+value(3
+   ,0003
+   ,神山拓磨
+   ,コウヤマタクマ
+   ,男
+   ,スポーツ
+   ,神山ですよろしくお願いします！
+   ,'2023-11-03 10:10:00
+   ,'2023-12-03 10:10:00')
