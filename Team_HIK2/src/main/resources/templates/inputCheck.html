@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+	<link rel="stylesheet" href="css/input.css">
+</head>
+
+<body>
+
+	<header>
+		<img src="img/DriveLine.png" alt="会社">
+		<h2>JavaTeamDevelopment</h2>
+	</header>
+
+	<hr>
+
+	<div class="wrapper">
+
+		<h2 class="message">自己紹介登録確認</h2>
+
+		<div class="inputForm">
+
+			<table>
+				<tr>
+					<th>名前</th>
+					<td>
+						<div class="checkForm1"></div>
+					</td>
+				</tr>
+				<tr>
+					<th>フリガナ</th>
+					<td>
+						<div class="checkForm1"></div>
+					</td>
+				</tr>
+				<tr>
+					<th>性別</th>
+					<td>
+						<div class="checkForm1"></div>
+					</td>
+				</tr>
+				<tr>
+					<th>趣味</th>
+					<td>
+						<div id="checkForm2"></div>
+					</td>
+				</tr>
+				<tr>
+					<th>一言</th>
+					<td>
+						<div id="checkForm3"></div>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+		<div class="pageTransition">
+			<form th:action="@{/input3_move}" name="input_form">
+				<input type="submit" id="returnBtn" value="戻る">
+			</form>
+			<form th:action="@{/endScreen_move}" name="endScreen_form">
+				<input type="submit" id="completeBtn" value="完了">
+			</form>
+
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>

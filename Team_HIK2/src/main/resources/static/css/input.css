@@ -1,0 +1,115 @@
+@charset "UTF-8";
+body {
+	background-color: rgb(233, 233, 233);
+}
+
+header {
+	width: 100%;
+	padding-left: 3%;
+	padding-right: 8%;
+	background-color: rgb(166, 163, 163);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+hr {
+	border: sorid 1px rgb(150, 150, 150);
+}
+
+img {
+	width: 100px;
+	height: 100px;
+}
+
+.wrapper {
+	height: 100vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.message {
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+
+table th,
+td {
+	padding: 15px 3px;
+}
+
+.pageTransition {
+	text-align: center;
+	display: flex;
+}
+
+table {
+	padding-right: 6em;
+}
+
+table p {
+	height: 2.0vw;
+	width: 2.0vw;
+	font-size: 0.8vw;
+	font-weight: bold;
+	background-color: red;
+	color: white;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.inputName {
+	height: 1.3vw;
+	width: 25vw;
+	background-color: white;
+	outline: thin solid black;
+}
+
+.test {
+	width: 100px;
+}
+
+.hobbyCheck {
+	white-space: nowrap;
+	display: block;
+	float: left;
+	width: 110px;
+}
+
+#commentText {
+	background-color: white;
+	outline: thin solid black;
+	resize: none;
+}
+
+.pageTransition #returnBtn, #completeBtn, #nextBtn{
+	height: 3vw;
+	width: 8vw;
+	margin: 50px 100px;
+	font-weight: bold;
+	background-color: skyblue;
+}
+
+/*== 入力確認画面CSS ==*/
+.checkForm1{
+	height: 1.3vw;
+	width: 28vw;
+	background-color: white;
+}
+
+#checkForm2 {
+	height: 3.0vw;
+	width: 28vw;
+	background-color: white;
+}
+
+#checkForm3 {
+	height: 10.0vw;
+	width: 28vw;
+	background-color: white;
+}

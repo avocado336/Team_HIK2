@@ -6,23 +6,28 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @Table(name = "introduction")
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class Book {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	
 	
 	@Column(name = "introduction_id")
-	public String introduction_id;
+	public Integer introduction_id;
 	
 	@Column(name = "user_id")
-	public String user_id;
+	public String userId;
 		
 	@Column(name = "name")
 	public String name;

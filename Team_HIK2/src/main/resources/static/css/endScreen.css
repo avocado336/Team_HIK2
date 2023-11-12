@@ -1,0 +1,50 @@
+@charset "UTF-8";
+html,
+body {
+	height: 100%;
+	background-color: rgb(233, 233, 233);
+}
+header {
+	width: 100%;
+	padding-left: 3%;
+	padding-right: 8%;
+	background-color: rgb(166, 163, 163);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+hr {
+	border: solid 1px rgb(150, 150, 150);
+}
+img {
+	height: 5vw;
+	width: 5vw;
+}
+.warraper {
+	height: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+}
+#info {
+	height: 30vw;
+	width: 60vw;
+	background-color: white;
+	border: solid 1px black;
+	margin: 3vw 0 1vw 0;
+}
+#done {
+	height: 5%;
+	margin-top: 2vw;
+}
+p {
+	height: 5%;
+	display: flex;
+	justify-content: center;
+}
+#sbt {
+	color: skyblue;
+	font-weight: bold;
+	font-size: 1.5dvw;
+}

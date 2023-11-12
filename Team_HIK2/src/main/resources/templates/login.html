@@ -1,46 +1,105 @@
 <!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+	
 
-<html>
-<html lang="ja">
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="login.css">
-  <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">
-<title>ログイン画面</title>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <!-- リセットCSSを読み込む処理を記述 -->
+ <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+ <!-- cssファイルを読み込む処理を記述 -->
+ <link rel="stylesheet" href="css/login.css">
+ <!--  jsのCDNを読み込む処理を記述 -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<header>
-		<img src= "img/DriveLine.png" alt="会社のロゴ" title="会社のロゴ">
-		<h1>JavaTeamDevelopment</h1>
-	</header>
-		
-	<hr>
-	
-	<main>
-		<h2>ログイン</h2>
-		<form th:action = "@{/register_move}" name = "register_form">
-<!--		<form action = "#" method = "post">-->
-			<table>
-				<tr>
-					<th>UserID</th>
-					<td><input type="text" value="" class="example1"></td>
-				</tr>
-				<tr>
-					<th>PassWord</th>
-					<td><input type="text" value="" class="example2"></td>
-<!--					<td><textarea class = "pass" cols = "20" rows = "1"></textarea></td>-->
-				</tr>
-			</table>
-		
-		<h2><button type = "submit" class ="A">登録</button></h2>
-<!--		<h3 class = "enter"><button class = "button2">新規会員登録はこちら</button></h3>-->
-		<h3><button type = "submit" class ="B">新規会員登録はこちら</button></h3>
-		</form>
-	</main>	
-	<script src="login.js"></script>
+ <!-- ヘッダー生成 -->
+ <header>
+
+  <img src="img/DriveLine.png">
+
+  <h2>JavaTeamDevelopment</h2>
+
+ </header>
+
+ <div class="warraper">
+
+  <h2>ログイン</h2>
+  <form th:action="@{/top1_move}"  method = "get" name="top1_form">
+   <table>
+    <tr>
+     <th for="userId" class="label">UserID</th>
+
+     <td><input type="text" id="userId" name="userId"></td>
+    </tr>
+
+    <tr>
+     <th for="password" class="label">PassWord</th>
+
+     <td><input type="password" id="password" name="password"></td>
+    </tr>
+   </table>
+
+   <input type="submit" id="btn" value="登録">
+  </form>
+
+  <form th:action="@{/register_move}" name="register_form">
+<!--	<form th:action = "@{/details_move}" name = "details_form">-->
+
+   <input type="submit" id="sbt" value="新規会員登録はこちら">
+
+  </form>
+ </div>
+ <script src="login.js"></script>
 </body>
 
-</html>
+<!--<!DOCTYPE html>-->
+
+<!--<html>-->
+<!--<html lang="ja">-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--  <link rel="stylesheet" href="login.css">-->
+<!--  <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">-->
+<!--<title>ログイン画面</title>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--	<header>-->
+<!--		<img src= "img/DriveLine.png" alt="会社のロゴ" title="会社のロゴ">-->
+<!--		<h1>JavaTeamDevelopment</h1>-->
+<!--	</header>-->
+		
+<!--	<hr>-->
+	
+<!--	<main>-->
+<!--		<h2>ログイン</h2>-->
+<!--		<form th:action = "@{/register_move}" name = "register_form">-->
+<!--		<form action = "#" method = "post">-->
+<!--			<table>-->
+<!--				<tr>-->
+<!--					<th>UserID</th>-->
+<!--					<td><input type="text" value="" class="example1"></td>-->
+<!--				</tr>-->
+<!--				<tr>-->
+<!--					<th>PassWord</th>-->
+<!--					<td><input type="text" value="" class="example2"></td>-->
+<!--					<td><textarea class = "pass" cols = "20" rows = "1"></textarea></td>-->
+<!--				</tr>-->
+<!--			</table>-->
+		
+<!--		<h2><button type = "submit" class ="A">登録</button></h2>-->
+<!--		<h3 class = "enter"><button class = "button2">新規会員登録はこちら</button></h3>-->
+<!--		<h3><button type = "submit" class ="B">新規会員登録はこちら</button></h3>-->
+<!--		</form>-->
+<!--	</main>	-->
+<!--	<script src="login.js"></script>-->
+<!--</body>-->
+
+<!--</html>-->

@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="introduction.css">
   <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">
+  <link rel="stylesheet" href="css/introduction.css">
 <title>一覧画面</title>
 </head>
 
@@ -21,21 +21,41 @@
 	
 	<main>
 		<h2>自己紹介登録者一覧</h2>
+<!--		<form th:action="@{/details_move}" name="details_form">-->
+<!--		<td th:text="*{user_id}" type="submit" class="support2"></td>-->
+<!--		</form>-->
 		<form th:action = "@{/details_move}" name = "details_form">
 		<table class = "table0">
 			<tr>
 				<th class = "support0">ID</th>
 				<th class = "support1">名前</th>
 			</tr>
-       		<tr th:each="intro : ${IntroList}" th:object="${intro}">
-				<td class = "support2">
+       		<tr th:each="introlist : ${IntroList}" th:object="${introlist}">
+			
+<!--				<td class = "support2">-->
 <!--					<button class = "support2" type = "submit">ponsan</button>-->
-					<td th:text="*{user_id}" button class = "support2" type = "submit"></td>
+				<td>
+<!--				<input type="submit" class="support2" th:text ="*{user_id}" >-->
+
+				<button><input type="submit" class="support2" th:value ="*{userId}" name = "userId"></button>
+<!--					<button><input type = "submit class = "support2" th:value ="${detailslist.userId}"></button>-->
+
+
+<!--					<td th:text="${product.name}"></td>-->
+
+
+<!--				<td th:text="*{user_id}" input type="submit" class = "support2">-->
+<!--				<input type="submit" id="sbt" value="新規会員登録はこちら">					-->
+					</td>
 <!--					<button class = "support2" type = "submit"><td th:text="*{user_id}" ></td></button>-->
 <!--					<td th:text="*{user_id}"></td>-->
-				</td>
+<!--				</td>-->
 <!--				<td class = "support3">新庄剛志</td>-->
-				<td th:text="*{created_at}" class = "support3"></td>				
+
+
+				<td th:text="*{name}" class = "support3"></td>	
+<!--				<td th:text="${detailslist.name}" class = "support3"></td>	-->
+						
 <!--				<td th:text="*{created_at}"></td>-->
 			</tr>
 			<tr>

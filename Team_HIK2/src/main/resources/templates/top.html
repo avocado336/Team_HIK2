@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <!-- リセットCSSを読み込む処理を記述 -->
+ <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+ <!-- cssファイルを読み込む処理を記述 -->
+ <link rel="stylesheet" href="css/top.css">
+ <!-- jsのCDNを読み込む処理を記述 -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+ <!-- ヘッダー生成 -->
+ <header>
+
+  <img src="img/DriveLine.png">
+
+  <h2>JavaTeamDevelopment</h2>
+
+ </header>
+
+ <div class="warraper">
+  <form th:action="@{/input_move}" name="input_form">
+   <table>
+    <tr>
+     <th class="label">自己紹介登録</th>
+     <td><input type="submit" id="btn" value="登録に進む"></td>
+    </tr>
+   </table>
+  </form>
+  <p>
+   新しく自己紹介を作ります。<br>
+   あなたをより知ってもらうために、<br>
+   趣味や一言を工夫しましょう。<br>
+   最高の自己紹介を完成させて、よりあなたを<br>
+   知ってもらえるチャンスにしましょう。
+  </p>
+
+  <form th:action="@{/intro_move}" name="IntroList">
+   <table>
+    <tr>
+     <th class="label">自己紹介登録者一覧</th>
+     <td><input type="submit" id="sbt" value="一覧を編集する"></td>
+    </tr>
+   </table>
+  </form>
+  <p>
+   登録している人を確認します。<br>
+   登録している人の自己紹介記事を見てみましょう。
+  </p>
+ </div>
+</body>
+
+</html>

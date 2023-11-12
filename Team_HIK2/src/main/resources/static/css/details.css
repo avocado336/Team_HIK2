@@ -1,0 +1,96 @@
+body {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(233,233,233);
+}
+
+header {
+	width: 100%;
+	background-color: rgb(166,163,163);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 3%;
+	padding-right: 8%;
+}
+
+img {
+	width: 100px;
+	height: 100px;
+}
+
+hr {
+	border: solid 1px rgb(150,150,150);
+}
+
+h2 {
+	text-align: center;
+	padding-top: 6%;
+	padding-bottom: 3%;
+}
+
+table.table1 {
+	padding-top: 20px;
+	border: 1px black solid;
+	border-collapse: collapse;
+	margin: auto;
+	letter-spacing: 0.1em;
+	background-color: white;
+}
+
+td {
+	border: 1px black solid;
+	padding: 15px 0px;
+	text-align: center;	
+}
+
+td.support0 {
+	padding: 0px 20px;
+}
+
+td.support1 {
+	text-align: left;
+	padding-left: 3px;
+}
+
+tr.tr0,td.support3,td.support4 {
+	padding: 60px 0px;
+}
+
+td.support4 {
+	text-align: left;
+	padding-left: 3px;
+	line-height: 2;
+}
+
+td.support2,td.support4 {
+	padding-right: 130px;
+}
+
+table.table2 {
+	border: none;
+	border-collapse: collapse;
+	margin: auto;
+	margin-top: 70px;
+}
+
+table.table2,th.support5 {
+	padding: 0px 20px;
+	border: none;
+}
+
+span {
+	background-color: rgb(176,196,222);
+	padding: 10px 37px;
+	margin: 0px 53px;
+}
+
+.span2 {
+	background-color: rgb(255,182,193);
+}
+
+.dele1 {
+	text-decoration: none;
+	color: black;
+}
+
