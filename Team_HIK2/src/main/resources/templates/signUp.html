@@ -29,34 +29,34 @@
 
 		<h2>新規会員登録</h2>
 
-		<form th:action="@{/topScreen}" name="login_form">
+		<form action="topScreen.html" th:action="@{/topScreen}" th:object="${user}" method="post" name="login_form">
 			<table>
 				<tr>
 					<th for="userId" class="label">UserID</th>
 					<td>
 						<p>必須</p>
 					</td>
-					<td><input type="text" id="userId" name="userId"></td>
+					<td><input type="text" th:field="*{user_id}" id="userId" name="userId"></td>
 				</tr>
 				<tr>
 					<th for="mailAddress" class="label">MailAddress</th>
 					<td>
 						<p>必須</p>
 					</td>
-					<td><input type="text" id="mailAddress" name="mailAddress"></td>
+					<td><input type="text" th:field="*{email}" id="mailAddress" name="mailAddress"></td>
 				</tr>
 				<tr>
 					<th for="password" class="label">PassWord</th>
 					<td>
 						<p>必須</p>
 					</td>
-					<td><input type="password" id="passWord" name="password"></td>
+					<td><input type="password" th:field="*{password}" id="passWord" name="password"></td>
 				</tr>
 			</table>
 			<input type="submit" id="btn" value="登録">
 		</form>
 
-		<form th:action="@{/loginScreen}" name="new">
+		<form action="loginScreen.html" th:action="@{/loginScreen}" name="new">
 
 			<input type="submit" id="sbt" value="ログイン画面へ">
 

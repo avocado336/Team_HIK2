@@ -22,7 +22,16 @@ public class UserService {
 	}
 
 	// データベースに値を登録
+	//	public void insert(User user) {
+	//		repository.save(user);
+	//	}
 	public void insert(User user) {
-		repository.save(user);
+		if (repository.findByEmail(user.getEmail()) == null) {
+			// Email does not exist, proceed with the insertion
+			repository.save(user);
+		} else {
+			// Email already exists, handle accordingly
+		}
 	}
+
 }
