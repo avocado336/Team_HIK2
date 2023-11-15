@@ -7,17 +7,17 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Document</title>
- <!-- リセットCSSを読み込む処理を記述 -->
+<!--  // リセットCSSを読み込む処理を記述 -->
  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
- <!-- cssファイルを読み込む処理を記述 -->
+<!--  // cssファイルを読み込む処理を記述 -->
  <link rel="stylesheet" href="css/login.css">
- <!--  jsのCDNを読み込む処理を記述 -->
+<!--   // jsのCDNを読み込む処理を記述 -->
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
- <!-- ヘッダー生成 -->
+<!--  // ヘッダー生成 -->
  <header>
 
   <img src="img/DriveLine.png">
@@ -35,6 +35,7 @@
      <th for="userId" class="label">UserID</th>
 
      <td><input type="text" id="userId" name="userId"></td>
+     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </tr>
 
     <tr>
@@ -45,6 +46,7 @@
    </table>
 
    <input type="submit" id="btn" value="登録">
+<!--   <p th:if="${param.error}" style="color:red">ログインに失敗しました</p>-->
   </form>
 
   <form th:action="@{/register_move}" name="register_form">
@@ -57,49 +59,37 @@
  <script src="login.js"></script>
 </body>
 
-<!--<!DOCTYPE html>-->
 
-<!--<html>-->
-<!--<html lang="ja">-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="ja" xmlns:th="http://www.thymeleaf.org">-->
 <!--<head>-->
-<!--<meta charset="UTF-8">-->
-<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-<!--  <link rel="stylesheet" href="login.css">-->
-<!--  <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">-->
-<!--<title>ログイン画面</title>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <link rel="stylesheet" th:href="@{/css/style.css}">-->
+<!--    <title>User Registration</title>-->
 <!--</head>-->
 
 <!--<body>-->
-<!--	<header>-->
-<!--		<img src= "img/DriveLine.png" alt="会社のロゴ" title="会社のロゴ">-->
-<!--		<h1>JavaTeamDevelopment</h1>-->
-<!--	</header>-->
-		
-<!--	<hr>-->
-	
-<!--	<main>-->
-<!--		<h2>ログイン</h2>-->
-<!--		<form th:action = "@{/register_move}" name = "register_form">-->
-<!--		<form action = "#" method = "post">-->
-<!--			<table>-->
-<!--				<tr>-->
-<!--					<th>UserID</th>-->
-<!--					<td><input type="text" value="" class="example1"></td>-->
-<!--				</tr>-->
-<!--				<tr>-->
-<!--					<th>PassWord</th>-->
-<!--					<td><input type="text" value="" class="example2"></td>-->
-<!--					<td><textarea class = "pass" cols = "20" rows = "1"></textarea></td>-->
-<!--				</tr>-->
-<!--			</table>-->
-		
-<!--		<h2><button type = "submit" class ="A">登録</button></h2>-->
-<!--		<h3 class = "enter"><button class = "button2">新規会員登録はこちら</button></h3>-->
-<!--		<h3><button type = "submit" class ="B">新規会員登録はこちら</button></h3>-->
-<!--		</form>-->
-<!--	</main>	-->
-<!--	<script src="login.js"></script>-->
+<!--    <main class="main">-->
+<!--    	<form class="form" th:action="@{/register_move}" method="post">-->
+<!--    		<h1 class="form__title">User Registration</h1>-->
+<!--    		<p class="form__item">-->
+<!--    			<label for="username">Username</label>-->
+<!--    			<input type="text" placeholder="Type Username" name="username" id="username">-->
+<!--    		</p>-->
+<!--    		<p class="form__item">-->
+<!--    			<label for="password">Password</label>-->
+<!--    			<input type="password" placeholder="Type Password" name="password" id="password">-->
+<!--    		</p>-->
+<!--    		<p class="form__item">-->
+<!--    			<label for="confirm-password">Confirm Password</label>-->
+<!--    			<input type="password" placeholder="Type Confirm Password" name="confirmPassword" id="confirm-password">-->
+<!--    		</p>-->
+<!--    		<p class="form__item">-->
+<!--    			<input type="submit" value="User Registration">-->
+<!--    		</p>-->
+<!--    	</form>-->
+<!--    </main>-->
 <!--</body>-->
-
 <!--</html>-->
+
+

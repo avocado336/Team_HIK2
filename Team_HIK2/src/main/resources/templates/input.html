@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
 	<link rel="stylesheet" href="css/input.css">
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+		integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>	
 </head>
 
 <body>
@@ -20,7 +22,7 @@
 
 	<div class="wrapper">
 
-
+		<form th:action="@{/inputCheck_move}" name="imputCheck_form">
 
 			<p class="message">自己紹介の内容を記入して下さい</p>
 			
@@ -32,14 +34,15 @@
 						<td>
 							<p>必須</p>
 						</td>
-						<td><input type="text" class="inputName" name="name"></td>
+						<td><input type="text" id = "name" class="inputName" name="name"></td>
 					</tr>
 					<tr>
 						<th>フリガナ</th>
 						<td>
 							<p>必須</p>
 						</td>
-						<td><input type="text" class="inputName" name="ruby"></td>
+<!--						<td><input type="text" class="inputName" name="ruby"></td>-->
+						<td><input type="text" pattern="[\u30A1-\u30F6]*" id="kana" class="inputName" name="ruby"></td>
 					</tr>
 					<tr>
 						<th>性別</th>
@@ -86,6 +89,8 @@
 
 		</form>
 	</div>
+
+	<script src="input.js"></script>
 
 </body>
 

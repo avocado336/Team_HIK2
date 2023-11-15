@@ -5,10 +5,10 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.model.Book;
+import com.example.demo.entity.Intro;
 
 @Repository
-public interface BookRepository extends JpaRepository<Book, Integer> {	
+public interface IntroRepository extends JpaRepository<Intro, Integer> {	
 //	List<Book> findByUserId(String userId, Sort sort);
 		
 //	  // select * from entity where name = 'xxx' order by position asc と同等
@@ -18,7 +18,7 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
 //	  // findAllOrderByPositionでは駄目
 //	  List<Book> findAllByOrderByPosition(String userId);
 	
-	 Optional<Book> findByuserId(String userId);
+	 Optional<Intro> findByuserId(String userId);
 
 //	 Optional<Book> deleteAll(String userId);
 

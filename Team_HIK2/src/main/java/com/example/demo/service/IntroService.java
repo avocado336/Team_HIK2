@@ -8,25 +8,25 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.model.Book;
-import com.example.demo.repository.BookRepository;
+import com.example.demo.entity.Intro;
+import com.example.demo.repository.IntroRepository;
 
 
 
 @Service
 @Transactional
-public class BookService {
+public class IntroService {
 	
 	@Autowired
-	BookRepository repository;
+	IntroRepository repository;
 	
 	// ユーザー全検索
-	public List<Book> findAll() {
+	public List<Intro> findAll() {
 		return repository.findAll(Sort.by(Sort.Direction.ASC, "userId"));
 	}
 	
 	// useridを指定して検索
-	public Optional<Book> findByuserId(String userId) {
+	public Optional<Intro> findByuserId(String userId) {
 		return repository.findByuserId(userId);
 	}
 

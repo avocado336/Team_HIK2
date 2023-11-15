@@ -10,23 +10,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.constant.UrlConst;
-import com.example.demo.model.Book;
-import com.example.demo.repository.BookRepository;
-import com.example.demo.service.BookService;
+import com.example.demo.entity.Intro;
+import com.example.demo.repository.IntroRepository;
+import com.example.demo.service.IntroService;
 
 @Controller
-public class BookController {
+public class IntroController {
 	
 	@Autowired
-	BookService service;
-	BookRepository repository;
+	IntroService service;
+	IntroRepository repository;
 	
 	
 	// 前項のTOP画面から遷移した際にDBに登録されているすべてのIDと名前を表示させる
-	@GetMapping(UrlConst.INTRODUCTION1)
+	@GetMapping("/intro_move")
 	public String IntroList1(Model model) {
-		List<Book> introlist = service.findAll();
+		List<Intro> introlist = service.findAll();
 		model.addAttribute("IntroList",introlist);
 //		Sort sort = Sort.by(Direction.ASC,"userId");
 //		List<Book> introlist = repository.findAll(sort);
@@ -40,12 +39,12 @@ public class BookController {
 //		return "introduction";	
 	
 	// テーブルからuserIDを押した際にそれに該当する値を返して詳細画面に遷移
-	@GetMapping(UrlConst.DETAILS)
+	@GetMapping("/details_move")
 	public String IntroList2(@RequestParam("userId")String userId,Model model) {
 //		int userId2 = Integer.parseInt(userId);
 //		List<Book> detailslist = service.findByuserIdAndName(userId2,name);
-		Optional<Book> detailslist1 = service.findByuserId(userId);
-		Book detailslist2 = detailslist1.get();
+		Optional<Intro> detailslist1 = service.findByuserId(userId);
+		Intro detailslist2 = detailslist1.get();
 //		List<Book> introlist = service.findAll(int user_id,String name);
 		model.addAttribute("DetailsList",detailslist2);
 //		System.out.println(detailslist2);
@@ -60,15 +59,15 @@ public class BookController {
 //	}
 	
 	// 詳細画面から「戻る」或いは「削除」ボタンを押した後に遷移してくる
-	@GetMapping(UrlConst.INTRODUCTION2)
+	@GetMapping("/introduction_move")
 	public String IntroList3(Model model) {
-		List<Book> introlist = service.findAll();
+		List<Intro> introlist = service.findAll();
 		model.addAttribute("IntroList",introlist);		
 		return "introduction";
 	}
 	
 	// 編集ボタンをクリックした際に入力画面に遷移する
-	@GetMapping(UrlConst.INPUT2)
+	@GetMapping("/input2_move")
 	public String IntroList4(Model model) {
 		return "input";
 	}
@@ -82,7 +81,7 @@ public class BookController {
 	
 	// 削除ボタンを押した際に画面上に表示されているデータをDBから削除する動作
 	@GetMapping("/book-delete")
-	public String delete(Model model, @ModelAttribute Book Book) {
+	public String delete(Model model, @ModelAttribute Intro Book) {
 	  service.deleteByuserId(Book.getUserId());
 	  // その後リダイレクト処理で一覧画面に遷移する
 	  return "redirect:/introduction_move";

@@ -40,6 +40,14 @@ dependencies {
     <scope>runtime</scope>
 </dependency>
 
+<dependency>
+    <groupId>com.github.dozermapper</groupId>
+    <artifactId>dozer-core</artifactId>
+    <version>6.5.0</version>
+</dependency>
+
+
+
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
