@@ -1,9 +1,9 @@
 package com.example.demo.entity;
 
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -16,15 +16,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Intro {
+public class IntroEntity {
 
 	@Id
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	
 	
 	@Column(name = "introduction_id")
-	public Integer introduction_id;
+	public String introductionId;
 	
 	@Column(name = "user_id")
 	public String userId;
@@ -45,10 +45,10 @@ public class Intro {
 	public String word;
 	
 	@Column(name = "created_at")
-	public String created_at;
+	private Date createDate;
 	
 	@Column(name = "updated_at")
-	public String updated_at;
+	private Date cDate;
 	
 	
 }

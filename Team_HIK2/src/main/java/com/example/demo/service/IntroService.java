@@ -8,7 +8,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.entity.Intro;
+import com.example.demo.entity.IntroEntity;
 import com.example.demo.repository.IntroRepository;
 
 
@@ -21,12 +21,12 @@ public class IntroService {
 	IntroRepository repository;
 	
 	// ユーザー全検索
-	public List<Intro> findAll() {
+	public List<IntroEntity> findAll() {
 		return repository.findAll(Sort.by(Sort.Direction.ASC, "userId"));
 	}
 	
 	// useridを指定して検索
-	public Optional<Intro> findByuserId(String userId) {
+	public Optional<IntroEntity> findByuserId(String userId) {
 		return repository.findByuserId(userId);
 	}
 

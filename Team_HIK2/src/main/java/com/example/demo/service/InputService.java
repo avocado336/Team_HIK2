@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.entity.UserEntity;
+import com.example.demo.entity.IntroEntity;
 import com.example.demo.form.RegisterForm;
-import com.example.demo.repository.UserRepository;
+import com.example.demo.repository.IntroRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,10 +21,10 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class RegisterService{
+public class InputService{
 	
 	// ユーザー情報テーブルDAO
-	private final UserRepository userRepository;
+	private final IntroRepository introRepository;
 	
 	// Dozer Mapper
 //	private final Mapper mapper;
@@ -39,9 +39,9 @@ public class RegisterService{
 	 *  @return 登録情報（ユーザー情報Entity）、すでに同じユーザーIDで登録がある場合はEmpty
 	 */
 	
-	public Optional<UserEntity> registUserEntity(RegisterForm form) {
-		var userEntityExistedOpt = userRepository.findById(form.getUserId());
-		if(userEntityExistedOpt.isPresent()) {
+	public Optional<IntroEntity> registIntroEntity(RegisterForm form) {
+		var introEntityExistedOpt = introRepository.findById(form.getName());
+		if(introEntityExistedOpt.isPresent()) {
 			return Optional.empty();
 		}
 //	public String registUserEntity(Model model,RegisterForm form) {
@@ -59,16 +59,15 @@ public class RegisterService{
 //		} else {	
 			
 		Date now = new Date();
-		var userEntity = new UserEntity();
-		userEntity.setUserId(form.getUserId());
-		userEntity.setEmail(form.getEmail());
-		userEntity.setPassword(form.getPassword());
-		userEntity.setCreateDate(now);
+		var introEntity = new IntroEntity();
+		introEntity.setName(form.getName());
+//		introEntity.setKana(((IntroEntity) form).getKana());
+//		introEntity.setGender(form.getGender());
+//		introEntity.setHobby(form.getHobby());
+//		introEntity.setWord(form.getWord());
+		introEntity.setCreateDate(now);
 		
-		var encodedPassword = passwordEncoder.encode(form.getPassword());
-		userEntity.setPassword(encodedPassword);
-		
-		return Optional.of(userRepository.save(userEntity));
+		return Optional.of(introRepository.save(introEntity));
 		
 	}
 

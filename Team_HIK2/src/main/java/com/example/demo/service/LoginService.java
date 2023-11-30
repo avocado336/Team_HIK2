@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.Collections;
+import java.util.Optional;
 
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,18 +12,32 @@ import org.springframework.stereotype.Service;
 import com.example.demo.entity.UserEntity;
 import com.example.demo.repository.UserRepository;
 
+import lombok.RequiredArgsConstructor;
+
 /*
  * 認証に使うユーザー情報の取得
  */
 
 @Service
+@RequiredArgsConstructor
 public class LoginService implements UserDetailsService {
 	
+	// ユーザー情報テーブルDAO
 	private final UserRepository userRepository;
 	
-	public LoginService(UserRepository userRepository) {
-		this.userRepository = userRepository;
+	
+	/**
+	 * ユーザー情報テーブル 主キー検索
+	 * @param userId ユーザーID
+	 * @return ユーザー情報テーブルを主キー検索した結果（1件）
+	 */
+	public Optional<UserEntity> searchUserById(String userId){
+		return userRepository.findById(userId);
 	}
+	
+//	public LoginService(UserRepository userRepository) {
+//		this.userRepository = userRepository;
+//	}
 
 	@Override
 	public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {

@@ -1,100 +1,93 @@
 package com.example.demo.controller;
 
+import org.springframework.context.MessageSource;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.constant.MessageConst;
+import com.example.demo.form.LoginForm;
+import com.example.demo.service.LoginService;
+import com.example.demo.util.AppUtil;
+
+import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
+
+/**
+ * ログイン画面コントローラー
+ * 
+ * @author grang
+ *
+ */
 
 @Controller
-
+@RequiredArgsConstructor
 public class LoginController {
 	
-//	@Autowired
-//	private HttpSession session;
+	/** ログイン画面 service*/
+	private final LoginService service;
 	
-	// ログイン画面の表示
-	@GetMapping("/login1_move")
-	public String login() {
+	/** PasswordEncoder */
+	private final PasswordEncoder passwordEncoder;
+	
+	/** メッセージソース*/
+	private final MessageSource messageSource;
+	
+	/** セッション情報*/
+	private final HttpSession session;
+	
+	/**
+	 * 初期表示
+	 * 
+	 * @param model モデル
+	 * @param form 入力情報
+	 * @return 表示画面
+	 */
+	
+	@GetMapping("/login1")
+	public String login(Model model,LoginForm form) {
 		return "login";
-	}	
-	
-//	@GetMapping(UrlConst.LOGIN1)
-//	public String register(Model model,LoginForm form) {
-////	public String userRegistration(Model model,LoginForm form,BindingResult result) {
-////		if(result.hasErrors()) {
-////			return "login";
-////		}
-//		return "register";
-//	}
-
-	// ログイン画面からログインが完了した後にTOP画面に遷移する
-	@GetMapping("top1_move")
-	public String top1() {
-		System.out.println("aaaaaaaa");
-		return "top";
 	}
- 	
-	// ログイン画面から新規会員登録画面に遷移する
-	@GetMapping("/register_move")
-	public String register() {
-		return "register";
-	}
-	
-
-//	@Controller
-//	public class AccountController {
-//		@GetMapping("/user/registration")
-//			return "user-registration";
-//		}
-//	}
-	
-	
-//	@Autowired
-//	private UserDetailsServicelmpl userDetailsService;
-	
-//	// 登録をするボタンを押した際に新規会員登録画面へ遷移
-//	@GetMapping(UrlConst.REGISTER)
-//	public String register() {
-////		model.addAttribute("user", new User());
-//		return "register";
-//	}
-	
 //	
-//	 // ログイン画面でエラー（DBに存在しないデータを入力した場合）
-//	@GetMapping(value = UrlConst.LOGIN1,params = "error")
+//	@GetMapping(value = "/login1",params = "error")
 //	public String loginError(Model model,LoginForm form) {
-//		var errorInfo =(Exception) session.getAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
-//		model.addAttribute("errorMsg",errorInfo.getMessage());
+//		var errorInfo = (Exception)session.getAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
+//		model.addAttribute("errorMsg", errorInfo.getMessage());
 //		return "login";
-//	}
-//	
-//	// ログインが成功したとき
-//	@GetMapping(UrlConst.LOGIN1)
-//	public String login2(Model model,LoginForm form) {
-//		var userInfo = service.serchUserById(form.getUserId());
-//		var isCorrectUserAuth = userInfo.isPresent()
-//				&& passwordEncoder.matches(form.getPassword(),userInfo.get().getPassword());
-//	if(isCorrectUserAuth) {
-//		return "top";
-//	} else {
-//		var errorMsg = AppUtil.getMessage(messageSource,ErrorMessageConst.LOGIN_WRONG_INPUT);
-//		model.addAttribute("errorMsg", errorMsg);
-//		return "redirect:/login1_move";
-//	}
-//	}
+//	}	
 	
-
+	// ログイン画面からログインが完了した後にTOP画面に遷移する
+	@PostMapping("top1")
+	public String top1(Model model,LoginForm form) {
+		var userEntity = service.searchUserById(form.getUserId());
+		// TODO パスワードはハッシュ化したものを使用する
+		var isCorrectUserAuth = userEntity.isPresent() 
+				&& passwordEncoder.matches(form.getPassword(),userEntity.get().getPassword());
+		
+		if(isCorrectUserAuth) {
+			return "redirect:/top2";
+		} else {
+			// TODO エラーメッセージはプロパティファイルで管理する
+			var errorMsg = AppUtil.getMessage(messageSource,MessageConst.LOGIN_WRONG_INPUT);
+			model.addAttribute("errorMsg",errorMsg);
+			return "login";
+		}
+	}
 	
-	// 新規会員画面から会員登録後トップ画面に遷移する
-	@GetMapping("/top2_move")
-	public String top2() {
+	// リダイレクト先のURLに対応するGetメソッドを追加する
+	@GetMapping("top2")
+	public String top2(Model model) {
+		// TOP画面に表示する内容をモデルに設定する
 		return "top";
 	}
 	
 	// 新規会員登録画面からログイン画面に遷移する
-	@GetMapping("/login2_move")
-	public String topScreen() {
-		return "login";
-	}
+//	@GetMapping("/login2_move")
+//	public String topScreen() {
+//		return "login";
+//	}
 	
 	// 入力画面（TOP画面から「登録に進む」を押した際に遷移する入力画面
 	@GetMapping("/input_move")

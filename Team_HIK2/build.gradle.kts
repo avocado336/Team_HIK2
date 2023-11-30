@@ -28,6 +28,7 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("com.github.dozermapper.dozer:dozer-spring-boot-autoconfigure:6.5.0")
 }
 
 <dependency>

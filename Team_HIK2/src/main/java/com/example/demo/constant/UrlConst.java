@@ -44,9 +44,9 @@
 //	// TOP画面（登録完了画面にてTOP画面に戻るを押した際に遷移する）
 //	public static final String TOP3 = "/top3_move";
 //	
-//	// 認証不要画面
+	// 認証不要画面
 //	public static final String[] NO_AUTHENTICATION = {LOGIN1,LOGIN2,REGISTER,"/img/**","/css/**"};
-//
+
 //	
 //
 //}

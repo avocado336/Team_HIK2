@@ -5,7 +5,7 @@ btn.addEventListener('click', function(event) {
 	let password = document.getElementById("passWord").value;
 	let mailAddress = document.getElementById("mailAddress").value;
 	// form内の値を取得
-	let formElement = document.forms.top2_form;
+	let formElement = document.forms.top2;
 	// エラーメッセージの初期化
 	let errorMessage = "";
 	// User IDのバリデーション
@@ -17,6 +17,8 @@ btn.addEventListener('click', function(event) {
 		errorMessage += "User IDは10文字以内で入力してください。\n";
 	} else if (/[#$%&'()=~]/.test(userID)) {
 		errorMessage += "User IDに特殊記号を使用しないでください。\n";
+/*	} else if(userRepository.existsByUserId(form.getUserId())) {
+		errorMessage += "このユーザーは登録済みです。\n";	*/
 	}
 	// MailAddressのバリデーション
 	if (mailAddress === "") {
@@ -47,5 +49,5 @@ btn.addEventListener('click', function(event) {
 		formElement.submit();
 		return true;
 	}
-
+	
 });

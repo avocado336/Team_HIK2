@@ -5,6 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.entity.UserEntity;
 
+/**
+ * ユーザー情報DAO
+ * @author grang
+ *
+ */
 
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, String> {

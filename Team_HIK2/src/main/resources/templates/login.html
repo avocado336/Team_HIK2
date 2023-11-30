@@ -29,13 +29,14 @@
  <div class="warraper">
 
   <h2>ログイン</h2>
-  <form th:action="@{/top1_move}"  method = "get" name="top1_form">
+  <span th:text="${errorMsg}"></span>
+  <form th:action="@{/top1}"  method = "post"  th:object="${loginForm}" name="top1">
    <table>
     <tr>
      <th for="userId" class="label">UserID</th>
 
      <td><input type="text" id="userId" name="userId"></td>
-     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+<!--     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
     </tr>
 
     <tr>
@@ -49,7 +50,7 @@
 <!--   <p th:if="${param.error}" style="color:red">ログインに失敗しました</p>-->
   </form>
 
-  <form th:action="@{/register_move}" name="register_form">
+  <form th:action="@{/register}" name="register_form">
 <!--	<form th:action = "@{/details_move}" name = "details_form">-->
 
    <input type="submit" id="sbt" value="新規会員登録はこちら">
