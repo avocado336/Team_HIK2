@@ -3,18 +3,26 @@ package com.example.demo.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.model.User;
+import com.example.demo.entity.UserEntity;
+
+/**
+ * ユーザー情報DAO
+ * @author grang
+ *
+ */
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer>{
-	User findByEmail(String email);
+public interface UserRepository extends JpaRepository<UserEntity, String> {
 
-	default void insert(User user) {
-		if (findByEmail(user.getEmail()) == null) {
-			// Email does not exist, proceed with the insertion
-			save(user);
-		} else {
-			// Email already exists, handle accordingly
-		}
-	}
+	/**
+	 * 
+	 * SQL(Select * From users Where userId = ?)と同じ
+	 * @param userId 
+	 * userId に一致するレコードの取得
+	 * @return
+	 */
+	UserEntity findByUserId(String userId);
+
+	boolean existsByUserId(String userId);
+
 }

@@ -26,14 +26,14 @@ btn.addEventListener('click', function(event) {
 	// Passwordのバリデーション
 	if (password === "") {
 		errorMessage += "PassWordは必須項目です。\n";
-		//	} else if (!/^[a-zA-Z0-9]+$/.test(password)) {
-		//		errorMessage += "PassWordは半角英数字のみで入力してください。\n";
-		//	} else if (password.length > 10 || password.length < 3) {
-		//		errorMessage += "PassWordは10文字以内、3文字以上で入力してください。\n";
-		//	} else if (!/[a-z]/.test(password) || !/[A-Z]/.test(password) || !/[0-9]/.test(password)) {
-		//		errorMessage += "PassWordは大文字小文字数字を組み合わせて入力してください。\n";
-		//	} else if (/[#$%&'()=~]/.test(password)) {
-		//		errorMessage += "PassWordには特殊記号を使用しないでください。\n";
+	} else if (!/^[a-zA-Z0-9]+$/.test(password)) {
+		errorMessage += "PassWordは半角英数字のみで入力してください。\n";
+	} else if (password.length > 10 || password.length < 3) {
+		errorMessage += "PassWordは10文字以内、3文字以上で入力してください。\n";
+	} else if (!/[a-z]/.test(password) || !/[A-Z]/.test(password) || !/[0-9]/.test(password)) {
+		errorMessage += "PassWordは大文字小文字数字を組み合わせて入力してください。\n";
+	} else if (/[#$%&'()=~]/.test(password)) {
+		errorMessage += "PassWordには特殊記号を使用しないでください。\n";
 	}
 
 	// エラーメッセージがある場合は表示

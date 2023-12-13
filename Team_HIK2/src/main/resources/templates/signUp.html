@@ -29,34 +29,35 @@
 
 		<h2>新規会員登録</h2>
 
-		<form action="topScreen.html" th:action="@{/topScreen}" th:object="${user}" method="post" name="login_form">
+		<span th:text="${message}"></span>
+		<form th:action="@{/topScreen2}" th:object="${registerForm}" method="post" name="login_form">
 			<table>
 				<tr>
 					<th for="userId" class="label">UserID</th>
 					<td>
 						<p>必須</p>
 					</td>
-					<td><input type="text" th:field="*{user_id}" id="userId" name="userId"></td>
+					<td><input type="text" id="userId" th:field="*{userId}" name="userId"></td>
 				</tr>
 				<tr>
 					<th for="mailAddress" class="label">MailAddress</th>
 					<td>
 						<p>必須</p>
 					</td>
-					<td><input type="text" th:field="*{email}" id="mailAddress" name="mailAddress"></td>
+					<td><input type="text" id="mailAddress" th:field="*{email}" name="mailAddress"></td>
 				</tr>
 				<tr>
 					<th for="password" class="label">PassWord</th>
 					<td>
 						<p>必須</p>
 					</td>
-					<td><input type="password" th:field="*{password}" id="passWord" name="password"></td>
+					<td><input type="password" id="passWord" th:field="*{password}" name="password"></td>
 				</tr>
 			</table>
 			<input type="submit" id="btn" value="登録">
 		</form>
 
-		<form action="loginScreen.html" th:action="@{/loginScreen}" name="new">
+		<form th:action="@{/loginScreen2}" name="new">
 
 			<input type="submit" id="sbt" value="ログイン画面へ">
 
