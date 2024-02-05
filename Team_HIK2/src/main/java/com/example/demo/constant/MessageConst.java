@@ -17,4 +17,6 @@ public class MessageConst {
 	// ユーザー登録画面：ユーザー登録完了
 	public static final String REGISTER_RESIST_SUCCEED = "register.resistSucceed";
 	
+	
+	
 }
