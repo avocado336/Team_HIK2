@@ -40,6 +40,11 @@ td {
 	padding: 15px 3px;
 }
 
+.genderCheck {
+	display: block;
+	float: left;
+}
+
 .pageTransition {
 	text-align: center;
 }

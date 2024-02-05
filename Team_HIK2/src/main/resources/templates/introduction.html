@@ -27,7 +27,7 @@
 				<th class = "support0">ID</th>
 				<th class = "support1">名前</th>
 			</tr>
-       		<tr th:each="intro : ${IntroList}" th:object="${intro}">
+       		<tr th:each="introlist : ${IntroList}" th:object="${introlist}">
 				<td class = "support2">
 <!--					<button class = "support2" type = "submit">ponsan</button>-->
 					<td th:text="*{user_id}" button class = "support2" type = "submit"></td>

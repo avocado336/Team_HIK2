@@ -20,7 +20,7 @@
 
 	<div class="wrapper">
 
-		<form class="inputForm" action="/inputCheck">
+		<form class="inputForm" th:action="@{/input}" th:object="${into}" method="post">
 
 			<p class="message">自己紹介の内容を記入して下さい</p>
 
@@ -32,21 +32,20 @@
 						<td>
 							<p>必須</p>
 						</td>
-						<td><input type="text" id="name" class="inputName" name="name"></td>
+						<td><input type="text" id="name" class="inputName" name="name" th:field="*{name}"></td>
 					</tr>
 					<tr>
 						<th>フリガナ</th>
 						<td>
 							<p>必須</p>
 						</td>
-						<td><input type="text" pattern="[\u30A1-\u30F6]*" id="kana" class="inputName" name="ruby"></td>
+						<td><input type="text" pattern="[\u30A1-\u30F6]*" id="kana" class="inputName" name="ruby" th:field="*{kana}"></td>
 					</tr>
 					<tr>
 						<th>性別</th>
 						<td></td>
-						<td>
-							<label class="genderCheck"><input type="radio" name="gender">男性</label>
-							<label class="genderCheck"><input type="radio" name="gender">女性</label>
+						<td class="genderCheck" th:each="genderSelect : ${radioGender}">
+							<input type="radio" name="gender" th:value="${genderSelect}" th:text="${genderSelect}" th:field="*{gender}">
 						</td>
 					</tr>
 					<tr>
@@ -55,21 +54,21 @@
 							<p>必須</p>
 						</td>
 						<td class="test">
-							<lable class="hobbyCheck"><input type="checkbox" name="hobby">映画</lable>
-							<lable class="hobbyCheck"><input type="checkbox" name="hobby">スポーツ観戦</lable>
-							<lable class="hobbyCheck"><input type="checkbox" name="hobby">読書</lable>
-							<lable class="hobbyCheck"><input type="checkbox" name="hobby">食べ歩き</lable>
-							<lable class="hobbyCheck"><input type="checkbox" name="hobby">旅行</lable>
-							<lable class="hobbyCheck"><input type="checkbox" name="hobby">ゲーム</lable>
-							<lable class="hobbyCheck"><input type="checkbox" name="hobby">お絵かき</lable>
-							<lable class="hobbyCheck"><input type="checkbox" name="hobby">犬と遊ぶ</lable>
-							<lable class="hobbyCheck"><input type="checkbox" name="hobby">音楽</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby" >映画</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby" >スポーツ観戦</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby" >読書</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby" >食べ歩き</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby" >旅行</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby" >ゲーム</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby" >お絵かき</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby" >犬と遊ぶ</lable>
+							<lable class="hobbyCheck"><input type="checkbox" name="hobby" >音楽</lable>
 						</td>
 					</tr>
 					<tr>
 						<th>一言</th>
 						<td></td>
-						<td><textarea id="commentText" name="comment" rows="7" cols="50"></textarea></td>
+						<td><textarea id="commentText" name="comment" rows="7" cols="50" th:field="*{message}"></textarea></td>
 					</tr>
 				</table>
 
@@ -77,7 +76,7 @@
 
 			<div class="pageTransition">
 
-				<input type="submit" id="returnBtn" value="戻る">
+				<input type="button" id="returnBtn" value="戻る">
 				<input type="submit" id="nextBtn" name="next" value="次へ">
 
 			</div>

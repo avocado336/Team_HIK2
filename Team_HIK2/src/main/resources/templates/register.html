@@ -9,8 +9,8 @@
 	<!-- リセットCSSを読み込む処理を記述 -->
 	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
 	<!-- cssファイルを読み込む処理を記述 -->
-	<link rel="stylesheet" href="loginScreen.css">
-	<!--	 jsのCDNを読み込む処理を記述 -->
+	<link rel="stylesheet" href="signUp.css">
+	<!-- jsのCDNを読み込む処理を記述 -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
@@ -27,32 +27,43 @@
 
 	<div class="warraper">
 
-		<h2>ログイン</h2>
+		<h2>新規会員登録</h2>
 
-		<form th:action="@{/topScreen}" name="login_form">
+		<span th:text ="${message}"></span>
+		<form th:action="@{/top2}" method = "post"  th:object = "${registerForm}" name="top2">
 			<table>
 				<tr>
 					<th for="userId" class="label">UserID</th>
-
+					<td>
+						<p>必須</p>
+					</td>
 					<td><input type="text" id="userId" name="userId"></td>
 				</tr>
-
+				<tr>
+					<th for="mailAddress" class="label">MailAddress</th>
+					<td>
+						<p>必須</p>
+					</td>
+					<td><input type="text" id="mailAddress" name="email"></td>
+				</tr>
 				<tr>
 					<th for="password" class="label">PassWord</th>
-
-					<td><input type="password" id="password" name="password"></td>
+					<td>
+						<p>必須</p>
+					</td>
+					<td><input type="password" id="passWord" name="password"></td>
 				</tr>
 			</table>
 			<input type="submit" id="btn" value="登録">
 		</form>
 
-		<form th:action="@{/signUp}" name="new">
+		<form th:action="@{/login2}" name="login">
 
-			<input type="submit" id="sbt" value="新規会員登録はこちら">
+			<input type="submit" id="sbt" value="ログイン画面へ">
 
 		</form>
 	</div>
-	<script src="loginScreen.js"></script>
+	<script src="signUp.js"></script>
 </body>
 
 </html>

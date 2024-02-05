@@ -1,9 +1,9 @@
 package com.example.demo.model;
 
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -14,9 +14,9 @@ import lombok.Data;
 public class User {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
-	private Integer user_id;
+	private String userId;
 
 	@Column(name = "email")
 	private String email;
@@ -25,6 +25,6 @@ public class User {
 	private String password;
 
 	@Column(name = "created_at")
-	private String created_at;
+	private Date createDate;
 
 }
